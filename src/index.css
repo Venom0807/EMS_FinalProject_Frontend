@@ -1,0 +1,98 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* Modern Theme & Animations */
+body {
+  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  color: #22223b;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.card {
+  border-radius: 1.2rem !important;
+  box-shadow: 0 4px 24px 0 rgba(30, 41, 59, 0.08), 0 1.5px 6px 0 rgba(30, 41, 59, 0.04);
+  transition: transform 0.2s cubic-bezier(.4,0,.2,1), box-shadow 0.2s;
+  background: #fff;
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px 0 rgba(30, 41, 59, 0.16), 0 3px 12px 0 rgba(30, 41, 59, 0.08);
+}
+
+.btn {
+  border-radius: 2rem !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(30, 41, 59, 0.06);
+}
+.btn:active, .btn:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem #a5b4fc44 !important;
+}
+
+.fade-in {
+  animation: fadeIn 1s cubic-bezier(.4,0,.2,1);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: none; }
+}
+
+.slide-in {
+  animation: slideIn 0.8s cubic-bezier(.4,0,.2,1);
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: none; }
+}
+
+.navbar {
+  background: #4f46e5 !important;
+  border-radius: 0 0 1.5rem 1.5rem;
+  box-shadow: 0 2px 12px 0 rgba(79, 70, 229, 0.08);
+}
+.navbar-brand, .navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 1.1rem;
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link:hover {
+  color: #a5b4fc !important;
+}
+
+footer {
+  background: #312e81;
+  color: #fff;
+  border-radius: 1.5rem 1.5rem 0 0;
+  box-shadow: 0 -2px 12px 0 rgba(49, 46, 129, 0.08);
+  padding: 1.5rem 0 0.5rem 0;
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+input, textarea, select {
+  border-radius: 1rem !important;
+  border: 1.5px solid #a5b4fc !important;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 0.2rem #a5b4fc44 !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #e0e7ff;
+}
+::-webkit-scrollbar-thumb {
+  background: #a5b4fc;
+  border-radius: 8px;
+}
