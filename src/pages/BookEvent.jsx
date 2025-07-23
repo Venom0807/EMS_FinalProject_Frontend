@@ -32,7 +32,7 @@ function BookEvent() {
         message: form.review,
       };
 
-      const res = await fetch("http://localhost:5000/api/bookings/create", {
+      const res = await fetch("https://ems_finalproject_backend.railway.internal/api/bookings/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

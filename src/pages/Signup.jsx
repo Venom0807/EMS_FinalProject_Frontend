@@ -17,7 +17,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/signup", form);
+      const res = await axios.post("https://ems_finalproject_backend.railway.internal/api/signup", form);
       setToast({ show: true, msg: "Account created successfully! Please login.", type: "success" });
       setTimeout(() => navigate("/login"), 1200);
     } catch (err) {
