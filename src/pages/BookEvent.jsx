@@ -1,5 +1,5 @@
 import { useState } from "react";
-import '../styles/BookEvent.css'
+import "../styles/BookEvent.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
