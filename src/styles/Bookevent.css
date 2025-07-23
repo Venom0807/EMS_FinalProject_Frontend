@@ -1,0 +1,54 @@
+/* BookEvent Page Styles */
+
+.bgImage {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(80,200,120,0.15)), url('../assets/eventbg.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input, textarea {
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: #fff;
+  transition: border 0.2s;
+}
+
+input:focus, textarea:focus {
+  border: 1.5px solid #50c878;
+  outline: none;
+}
+
+button[type="submit"] {
+  background: #50c878;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+  background: #3ca76c;
+}
+
+form {
+  background: rgba(255,255,255,0.93);
+  border-radius: 12px;
+  box-shadow: 0 2px 16px 0 rgba(80,200,120,0.12);
+  padding: 2rem 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .bgImage {
+    padding: 1rem;
+  }
+  form {
+    padding: 1rem;
+  }
+}
