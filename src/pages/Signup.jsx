@@ -1,10 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import Toast from "../components/Toast";
 
 function Signup() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [message, setMessage] = useState("");
+  const [toast, setToast] = useState({ show: false, msg: "", type: "success" });
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -15,11 +17,12 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/signup", form);
-      setMessage(res.data.msg);
-      navigate("/login");
+      const res = await axios.post("http://localhost:5000/api/signup", form);
+      setToast({ show: true, msg: "Account created successfully! Please login.", type: "success" });
+      setTimeout(() => navigate("/login"), 1200);
     } catch (err) {
-      setMessage(err.response?.data?.msg || "Signup failed");
+      console.log('Signup error response:', err.response);
+      setToast({ show: true, msg: err.response?.data?.msg || err.response?.data?.error || "Signup failed", type: "error" });
     }
   };
 
@@ -64,8 +67,8 @@ function Signup() {
           </button>
         </form>
 
-        {message && (
-          <p className="text-center mt-4 text-red-500">{message}</p>
+        {toast.show && (
+          <Toast message={toast.msg} type={toast.type} onClose={() => setToast({ ...toast, show: false })} />
         )}
 
         <p className="text-sm text-center text-gray-600 mt-6">

@@ -2,10 +2,12 @@ import { useState } from "react";
 import { GoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import Toast from "../components/Toast";
 
 function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
+  const [toast, setToast] = useState({ show: false, msg: "", type: "success" });
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -20,7 +22,7 @@ function Login() {
       localStorage.setItem("user", JSON.stringify(res.data.user));
       navigate("/");
     } catch (err) {
-      setMessage(err.response?.data?.error || "Login failed");
+      setToast({ show: true, msg: err.response?.data?.error || "Login failed", type: "error" });
     }
   };
 
@@ -70,7 +72,9 @@ function Login() {
           </button>
         </form>
 
-        {message && <p className="text-center mt-4 text-red-500">{message}</p>}
+        {toast.show && (
+          <Toast message={toast.msg} type={toast.type} onClose={() => setToast({ ...toast, show: false })} />
+        )}
 
         <div className="mt-6 flex items-center justify-between">
           <hr className="w-full border-gray-300" />

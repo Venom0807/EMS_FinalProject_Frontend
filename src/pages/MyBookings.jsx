@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Navbar from "../components/Navbar";
 
 const MyBookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -83,7 +84,9 @@ const MyBookings = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen py-10 px-4">
+    <>
+      <Navbar />
+      <div className="bg-gray-100 min-h-screen py-10 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-[#50c878] mb-10">📋 My Bookings</h2>
         {error && <p className="text-center text-red-500">Error: {error}</p>}
@@ -142,7 +145,8 @@ const MyBookings = () => {
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 };
 

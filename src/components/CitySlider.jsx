@@ -4,7 +4,7 @@ import lahore from '../assets/lahore.jpg';
 import karachi from '../assets/karachi.jpg';
 import islamabad from '../assets/islamabad.jpg';
 import multan from '../assets/multan.jpg';
-import babekhyber from '../assets/Babekhyber.jpg';
+import babekhyber from '../assets/babekhyber.jpg';
 
 const cities = [
     { name: 'Lahore', image: lahore },
