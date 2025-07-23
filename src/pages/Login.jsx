@@ -17,7 +17,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://ems_finalproject_backend.railway.internal/api/login", form);
+      const res = await axios.post("https://emsfinalprojectbackend-production.up.railway.app/api/login", form);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
       navigate("/");
@@ -28,7 +28,7 @@ function Login() {
 
   const handleGoogleSuccess = async (credentialResponse) => {
     try {
-      const res = await axios.post("https://ems_finalproject_backend.railway.internal/api/auth/google", {
+      const res = await axios.post("https://emsfinalprojectbackend-production.up.railway.app/api/auth/google", {
         tokenId: credentialResponse.credential,
       });
       localStorage.setItem("token", res.data.token);

@@ -10,7 +10,7 @@ const MyBookings = () => {
 
   const fetchBookings = async () => {
     try {
-      const res = await fetch("https://ems_finalproject_backend.railway.internal/api/bookings/my", {
+      const res = await fetch("https://emsfinalprojectbackend-production.up.railway.app/api/bookings/my", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -47,7 +47,7 @@ const MyBookings = () => {
   const handleEditSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`https://ems_finalproject_backend.railway.internal/api/bookings/update/${editBooking._id}`,
+      const res = await fetch(`https://emsfinalprojectbackend-production.up.railway.app/api/bookings/update/${editBooking._id}`,
         {
           method: 'PUT',
           headers: {
@@ -67,7 +67,7 @@ const MyBookings = () => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`https://ems_finalproject_backend.railway.internal/api/bookings/delete/${id}`,
+      const res = await fetch(`https://emsfinalprojectbackend-production.up.railway.app/api/bookings/delete/${id}`,
         {
           method: 'DELETE',
           headers: {
