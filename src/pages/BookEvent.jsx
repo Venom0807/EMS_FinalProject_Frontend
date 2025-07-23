@@ -1,8 +1,17 @@
 import { useState } from "react";
-import axios from "axios";
+import '../styles/BookEvent.css'
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function BookEvent() {
-  const [form, setForm] = useState({ eventName: "", eventDate: "", guests: "", location: "", phone: "", review: "" });
+  const [form, setForm] = useState({
+    eventName: "",
+    eventDate: "",
+    guests: "",
+    location: "",
+    phone: "",
+    review: "",
+  });
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -20,8 +29,9 @@ function BookEvent() {
         eventDate: form.eventDate,
         guests: Number(form.guests),
         location: form.location,
-        message: form.review, // send review as message
+        message: form.review,
       };
+
       const res = await fetch("http://localhost:5000/api/bookings/create", {
         method: "POST",
         headers: {
@@ -30,7 +40,9 @@ function BookEvent() {
         },
         body: JSON.stringify(payload),
       });
+
       const data = await res.json();
+
       if (res.ok) {
         alert("Booking successful!");
         setForm({ eventName: "", eventDate: "", guests: "", location: "", phone: "", review: "" });
@@ -44,71 +56,82 @@ function BookEvent() {
     }
   };
 
-
   return (
-    <div className="container mt-5">
-      <h2>Book an Event</h2>
-      <form onSubmit={handleSubmit} className="w-50 mx-auto">
-        <input
-          type="text"
-          className="form-control my-2"
-          name="eventName"
-          placeholder="Event Name"
-          value={form.eventName}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="date"
-          className="form-control my-2"
-          name="eventDate"
-          value={form.eventDate}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="number"
-          className="form-control my-2"
-          name="guests"
-          placeholder="Number of People"
-          value={form.guests}
-          onChange={handleChange}
-          min="1"
-          required
-        />
-        <input
-          type="text"
-          className="form-control my-2"
-          name="location"
-          placeholder="Event Location"
-          value={form.location}
-          onChange={handleChange}
-          required
-        />
-        {/* Optional fields for frontend only */}
-        <input
-          type="text"
-          className="form-control my-2"
-          name="phone"
-          placeholder="Phone Number (optional)"
-          value={form.phone}
-          onChange={handleChange}
-        />
-        <textarea
-          className="form-control my-2"
-          name="review"
-          placeholder="Your Review (optional)"
-          value={form.review}
-          onChange={handleChange}
-          rows={3}
-        />
-        <button type="submit" className="btn btn-danger w-100" disabled={loading}>
-          {loading ? "Booking..." : "Book Event"}
-        </button>
-      </form>
-      {message && <p className="text-center mt-3 text-danger">{message}</p>}
-    </div>
+    <>
+      <Navbar></Navbar>
+      <div className="bgImage">
+        <div className=" p-1">
+          <div className="max-w-xl mx-auto mt-10 px-4">
+            <h2 className="text-[1.5rem] text-[#50c878] font-semibold text-center mb-6">Eventify Booking</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <input
+                type="text"
+                name="eventName"
+                placeholder="Event Name"
+                value={form.eventName}
+                onChange={handleChange}
+                required
+                className="w-full text-black p-3 border border-gray-300 rounded-md focus:outline-none  focus:border-[#50c878]"
+              />
+              <input
+                type="date"
+                name="eventDate"
+                value={form.eventDate}
+                onChange={handleChange}
+                required
+                className="w-full p-3 text-black border border-gray-300 rounded-md focus:outline-none  focus:border-[#50c878]"
+              />
+              <input
+                type="number"
+                name="guests"
+                placeholder="Number of People"
+                value={form.guests}
+                onChange={handleChange}
+                min="1"
+                required
+                className="w-full text-black p-3 border border-gray-300 rounded-md focus:outline-none  focus:border-[#50c878]"
+              />
+              <input
+                type="text"
+                name="location"
+                placeholder="Event Location"
+                value={form.location}
+                onChange={handleChange}
+                required
+                className="w-full text-black p-3 border border-gray-300 rounded-md focus:outline-none  focus:border-[#50c878]"
+              />
+              <input
+                type="text"
+                name="phone"
+                placeholder="Phone Number (optional)"
+                value={form.phone}
+                onChange={handleChange}
+                className="w-full text-black p-3 border border-gray-300 rounded-md focus:outline-none  focus:border-[#50c878]"
+              />
+              <textarea
+                name="review"
+                placeholder="Your Review (optional)"
+                value={form.review}
+                onChange={handleChange}
+                rows={3}
+                className="w-full text-black p-3 border border-gray-300 rounded-md focus:outline-none  focus:border-[#50c878]"
+              />
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full text-white bg-[#50c878]   font-semibold py-3 rounded-md transition"
+              >
+                {loading ? "Booking..." : "Book Event"}
+              </button>
+            </form>
+            {message && <p className="text-center text-red-500 mt-4">{message}</p>}
+          </div>
+        </div>
+      </div>
+      <Footer></Footer>
+    </>
   );
+
 }
 
 export default BookEvent;

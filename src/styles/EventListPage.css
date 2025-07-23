@@ -1,0 +1,17 @@
+.event-list-page {
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.event-list-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.event-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}

@@ -1,23 +1,94 @@
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
 function Contact() {
+  const formRef = useRef();
+  const [status, setStatus] = useState("");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    emailjs
+      .sendForm(
+        "ahmerPortfolio",       // ✅ Replace with your actual Service ID
+        "template_9yhuzhs",     // ✅ Replace with your actual Template ID
+        formRef.current,
+        "gkGuSGi10eOfONqTt"     // ✅ Replace with your actual Public Key
+      )
+      .then(
+        () => {
+          setStatus("Message sent ✅");
+          formRef.current.reset();
+        },
+        (error) => {
+          console.error("EmailJS Error:", error);
+          setStatus("Failed to send ❌ - Please try again.");
+        }
+      );
+  };
+
   return (
-    <div className="container mt-5">
-      <h2>Contact Us</h2>
-      <p>Feel free to reach out to us for your event planning needs.</p>
-      <form>
-        <div className="mb-3">
-          <label>Name</label>
-          <input type="text" className="form-control" required />
+    <div className="container w-[65%] mx-auto mt-10 px-4 sm:px-6 lg:px-8">
+      <h2 className="text-[1.5rem] text-center font-semibold text-[#50c878] mb-4">
+        Contact Us
+      </h2>
+      <p className="text-lg text-gray-600 mb-6">
+        Feel free to reach out to us for your event planning needs.
+      </p>
+      <form ref={formRef} onSubmit={sendEmail}>
+        <div className="mb-4">
+          <label htmlFor="user_name" className="block text-sm font-medium text-gray-700">
+            Name
+          </label>
+          <input
+            type="text"
+            name="user_name"
+            id="user_name"
+            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#50c878] focus:border-[#50c878]"
+            required
+          />
         </div>
-        <div className="mb-3">
-          <label>Email</label>
-          <input type="email" className="form-control" required />
+
+        <div className="mb-4">
+          <label htmlFor="user_email" className="block text-sm font-medium text-gray-700">
+            Email
+          </label>
+          <input
+            type="email"
+            name="user_email"
+            id="user_email"
+            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#50c878] focus:border-[#50c878]"
+            required
+          />
         </div>
-        <div className="mb-3">
-          <label>Message</label>
-          <textarea className="form-control" rows="4" required />
+
+        <div className="mb-6">
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+            Message
+          </label>
+          <textarea
+            name="message"
+            id="message"
+            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#50c878] focus:border-[#50c878]"
+            rows="4"
+            required
+          ></textarea>
         </div>
-        <button className="btn btn-primary">Send Message</button>
+
+        <button
+          type="submit"
+          className="w-full py-2 px-4 bg-[#50c878] cursor-pointer text-white font-semibold rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2"
+        >
+          Send Message
+        </button>
       </form>
+
+      {status && (
+        <p className="text-sm text-center text-gray-700 mt-4">
+          {status}
+        </p>
+      )}
     </div>
   );
 }
