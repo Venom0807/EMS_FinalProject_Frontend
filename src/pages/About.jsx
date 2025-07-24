@@ -19,7 +19,7 @@ function About() {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
 
-          {/* Image Section */}
+
           <div className="w-full md:w-1/2" data-aos="fade-right">
             <img
               src={hero2}
@@ -28,7 +28,7 @@ function About() {
             />
           </div>
 
-          {/* Content Section */}
+
           <div className="w-full md:w-1/2" data-aos="fade-left">
             <h2 className="text-3xl md:text-4xl font-bold text-[#50c878] mb-6">
               About Eventify

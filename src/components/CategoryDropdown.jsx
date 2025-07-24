@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CategoryDropdown = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    // Categories with dummy data for each category
+
     const categories = [
         { name: "Wedding", id: "wedding" },
         { name: "Birthday", id: "birthday" },
@@ -19,7 +19,7 @@ const CategoryDropdown = () => {
 
     return (
         <div className="relative z-10 inline-block text-left">
-            {/* Dropdown Button */}
+
             <button
                 type="button"
                 className="inline-flex justify-center cursor-pointer w-full rounded-md border border-[#50c878] bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#50c878] focus:ring-offset-2 focus:ring-offset-gray-100"

@@ -11,32 +11,32 @@ function WhyChooseUs() {
         {
             title: "End-to-End Event Planning",
             desc: "From venue selection to guest coordination, we handle every detail so you don’t have to.",
-            icon: "🎯",
+            icon: "",
         },
         {
             title: "Real-Time Collaboration",
             desc: "Communicate with vendors, team members, and clients seamlessly in one place.",
-            icon: "💬",
+            icon: "",
         },
         {
             title: "Smart Budget Tracking",
             desc: "Keep your event on budget with real-time analytics and expense tracking tools.",
-            icon: "💰",
+            icon: "",
         },
         {
             title: "Beautiful Themes",
             desc: "Use pre-built themes and schedules to plan weddings, conferences, parties, and more.",
-            icon: "📋",
+            icon: "",
         },
         {
             title: "24/7 Support",
             desc: "We're here anytime you need us to make sure your event goes off without a hitch.",
-            icon: "🕒",
+            icon: "",
         },
         {
             title: "Data-Driven Insights",
             desc: "Gain valuable feedback and analytics from every event to continuously improve future experiences.",
-            icon: "📊",
+            icon: "",
         },
     ];
 
