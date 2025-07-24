@@ -30,7 +30,7 @@ const CitySlider = () => {
     return (
         <>
             <h2 className='flex justify-center items-center mb-4 mt-4 text-[#50c878] text-[1.4rem]'>See Current Events In Cities</h2>
-            <div className="relative w-[80%] m-auto overflow-hidden h-56 md:h-96 rounded-lg">
+            <div className="relative w-full max-w-3xl m-auto overflow-hidden h-52 sm:h-72 md:h-96 rounded-lg">
                 {/* Slide */}
                 <div className="relative w-full h-full">
                     <Link
@@ -40,7 +40,7 @@ const CitySlider = () => {
                         <img
                             src={cities[currentIndex].image}
                             alt={cities[currentIndex].name}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover object-center"
                         />
                         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
                             <h2 className="text-white text-3xl md:text-5xl font-bold">

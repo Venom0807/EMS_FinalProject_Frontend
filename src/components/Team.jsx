@@ -22,7 +22,7 @@ const Team = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-8 max-w-7xl mx-auto">
         {teamMembers.map((member, index) => (
           <div
             key={index}
@@ -30,7 +30,7 @@ const Team = () => {
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >
-            <img src={member.image} alt={member.name} className="w-full h-60 object-cover" />
+            <img src={member.image} alt={member.name} className="w-full h-44 sm:h-60 object-cover" />
             <div className="p-4 text-center">
               <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
               <p className="text-[#50c878] mt-1">{member.role}</p>

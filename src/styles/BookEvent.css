@@ -46,9 +46,29 @@ form {
 
 @media (max-width: 600px) {
   .bgImage {
-    padding: 1rem;
+    padding: 0.5rem;
   }
   form {
-    padding: 1rem;
+    padding: 0.75rem;
+  }
+  .gallery-heading, .category-title {
+    font-size: 1.1rem;
+  }
+  input, textarea {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .bgImage {
+    padding: 1.5rem;
+  }
+  form {
+    padding: 1.25rem 1.5rem;
+  }
+  input, textarea {
+    font-size: 1.05rem;
+    padding: 0.7rem;
   }
 }

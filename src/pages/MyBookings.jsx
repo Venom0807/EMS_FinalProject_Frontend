@@ -87,7 +87,7 @@ const MyBookings = () => {
     <>
       <Navbar />
       <div className="bg-gray-100 min-h-screen py-10 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl w-full mx-auto mt-10 px-3 sm:px-6">
         <h2 className="text-3xl font-bold text-center text-[#50c878] mb-10">📋 My Bookings</h2>
         {error && <p className="text-center text-red-500">Error: {error}</p>}
 

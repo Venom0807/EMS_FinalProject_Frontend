@@ -29,7 +29,7 @@ function Contact() {
   };
 
   return (
-    <div className="container w-[65%] mx-auto mt-10 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-7xl mx-auto w-full py-10 px-3 sm:px-6">
       <h2 className="text-[1.5rem] text-center font-semibold text-[#50c878] mb-4">
         Contact Us
       </h2>

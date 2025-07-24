@@ -27,7 +27,7 @@ const StartPlanning = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 py-10 px-4">
+        <div className="max-w-3xl w-full mx-auto py-8 px-3 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto bg-white p-8 rounded shadow-lg">
                 <h2 className="text-3xl font-bold text-center text-[#50c878] mb-6">Start Planning Your Event</h2>
                 <p className="text-center text-gray-600 mb-8">

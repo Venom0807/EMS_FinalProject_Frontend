@@ -26,16 +26,16 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-black text-white sticky top-0 z-50">
-      <div className="container mx-auto flex items-center justify-between p-4">
+    <header className="bg-black text-white sticky top-0 z-50 w-full">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-6 py-3">
         {/* Logo Section */}
-        <Link to="/" className="flex items-center">
-          <img src={icon} width={45} alt="Logo" />
-          <span className="ml-3 text-[1.5rem] cursor-pointer text-[#50c878] font-semibold">Eventify</span>
+        <Link to="/" className="flex items-center min-w-[120px]">
+          <img src={icon} width={38} className="sm:w-[45px]" alt="Logo" />
+          <span className="ml-2 sm:ml-3 text-lg sm:text-[1.5rem] cursor-pointer text-[#50c878] font-semibold">Eventify</span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-6 items-center text-base">
+        <nav className="hidden max-[1069px]:hidden min-[1070px]:flex gap-6 items-center text-base">
           <Link to="/" className="hover:text-[#50c878]">Home</Link>
           <Link to="/about" className="hover:text-[#50c878]">About</Link>
           <Link to="/gallery" className="hover:text-[#50c878]">Gallery</Link>
@@ -48,7 +48,7 @@ const Navbar = () => {
         </nav>
 
         {/* Desktop Buttons */}
-        <div className="hidden md:flex gap-2 items-center">
+        <div className="hidden max-[1069px]:hidden min-[1070px]:flex gap-2 items-center">
           {isLoggedIn ? (
             <>
               <Link to="/dashboard">
@@ -73,14 +73,14 @@ const Navbar = () => {
         </div>
 
         {/* Hamburger Toggle */}
-        <button onClick={toggleMenu} className="md:hidden text-white text-2xl">
+        <button onClick={toggleMenu} className="min-[1070px]:hidden text-white text-2xl">
           {menuOpen ? <FiX /> : <FiMenu />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-black border-t border-gray-700">
+        <div className="min-[1070px]:hidden bg-black border-t border-gray-700">
           <div className="flex flex-col p-4 space-y-3 text-white">
             <Link to="/" onClick={toggleMenu} className="hover:text-[#50c878]">Home</Link>
             <Link to="/about" onClick={toggleMenu} className="hover:text-[#50c878]">About</Link>

@@ -8,7 +8,7 @@ import github from '../assets/github.svg';
 function Footer() {
   return (
     <footer className="text-gray-600 bg-black mt-2 body-font">
-      <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+      <div className="max-w-7xl mx-auto w-full px-3 sm:px-6 py-12 md:py-20 flex flex-col md:flex-row md:flex-nowrap flex-wrap md:items-start items-center">
         <div className="w-80 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
           <Link to="/" className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
   <img src={icon} alt="" />
@@ -31,9 +31,9 @@ function Footer() {
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 className="title-font font-medium text-[#50c878] tracking-widest text-[1.1rem] mb-3">Contact Info</h2>
             <ul className="list-none flex flex-col gap-2 mb-10">
-              <li><a className="text-gray-600 cursor-pointer hover:text-[#50c878]">ph: 123456789</a></li>
-              <li><a className="text-gray-600 cursor-pointer hover:text-[#50c878]">Email: Eventify@gmail.com</a></li>
-              <li><a className="text-gray-600 cursor-pointer hover:text-[#50c878]">Address: Arfa Kareem Tower, Lahore</a></li>
+              <li><a className="text-gray-600 cursor-pointer hover:text-[#50c878]">Phone:03234487705</a></li>
+              <li><a className="text-gray-600 cursor-pointer hover:text-[#50c878]">Email:Eventify@gmail.com</a></li>
+              <li><a className="text-gray-600 cursor-pointer hover:text-[#50c878]">Address:Arfa Kareem Tower, Lahore</a></li>
             </ul>
           </div>
 

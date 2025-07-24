@@ -41,7 +41,7 @@ const EventDetails = () => {
     return (
         <>
             <Navbar />
-            <div className="max-w-3xl mx-auto py-10 px-6">
+            <div className="max-w-3xl w-full mx-auto py-8 px-3 sm:px-6 lg:px-8">
                 <h1 className="text-4xl font-bold text-[#50c878] mb-6">{eventTitle}</h1>
                 <div className="bg-white shadow-md rounded-lg p-6 space-y-4 text-gray-700">
                     <p><span className="font-semibold">Date:</span> {details.date}</p>

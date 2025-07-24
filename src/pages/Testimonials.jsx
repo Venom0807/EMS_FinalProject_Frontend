@@ -53,21 +53,19 @@ function Testimonials() {
     AOS.init({ duration: 1000 });
   }, []);
 
-
   return (
     <>
       <Navbar></Navbar>
 
       <section className="bg-gray-100 py-16">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-8 sm:py-12">
           <h2
             className="text-[1.85rem] md:text-4xl font-bold text-center text-[#50c878] mb-12"
             data-aos="fade-up"
           >
             What People Are Saying
           </h2>
-
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-8">
             {testimonials.map((t, index) => (
               <div
                 key={index}

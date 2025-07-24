@@ -47,7 +47,7 @@ const EventListPage = () => {
     return (
         <>
             <Navbar></Navbar>
-            <div className="event-list-page">
+            <div className="max-w-4xl w-full mx-auto py-8 px-3 sm:px-6 lg:px-8">
                 <h1 className='text-[#50c878]'>Upcoming Events</h1>
                 <div className="event-grid">
                     {dummyEvents.map(event => (
